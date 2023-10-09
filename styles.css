@@ -2,6 +2,9 @@ body {
     font-family: "Gill Sans";
     font-size: 24px;
     padding: 0px 30px;
+    background-color: cornflowerblue;
+    color: #fff;
+    line-height: 36px;
 }
 
 nav > ul {
@@ -14,6 +17,7 @@ nav > ul > li {
     padding: 14px 20px;
     background: red;
     box-shadow: 6px 10px 10px #000;
+    border-radius: 10px;
 }
 
 nav > ul > li > a {
@@ -29,6 +33,13 @@ img {
     border: 2px solid #000;
     margin-right: 10px;
     width: 40%;
+}
+
+.main-img {
+    width: 24%;
+    margin-right: 40px;
+    border-radius: 50%;
+    height: 339px;
 }
 
 section > .content {
