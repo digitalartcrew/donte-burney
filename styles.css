@@ -1,6 +1,7 @@
 body {
     font-family: "Gill Sans";
     font-size: 24px;
+    padding: 0px 30px;
 }
 
 nav > ul {
@@ -9,21 +10,35 @@ nav > ul {
 }
 
 nav > ul > li {
-    list-style-type: none;
     color: #fff;
     padding: 14px 20px;
     background: red;
     box-shadow: 6px 10px 10px #000;
 }
 
+nav > ul > li:hover {
+    background-color: blue;
+}
+
 #about {
     display: flex;
     justify-content: space-between;
+    flex: 1;
     padding: 10px;
 }
 
-.about__images img {
+
+img {
     border: 2px solid #000;
     margin-right: 10px;
-    width: 400px;
+    width: 40%;
+}
+
+section > .content {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul > li {
+    list-style-type: none;
 }
