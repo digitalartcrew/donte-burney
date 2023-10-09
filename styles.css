@@ -16,17 +16,14 @@ nav > ul > li {
     box-shadow: 6px 10px 10px #000;
 }
 
+nav > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+}
+
 nav > ul > li:hover {
     background-color: blue;
 }
-
-#about {
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    padding: 10px;
-}
-
 
 img {
     border: 2px solid #000;
@@ -41,4 +38,8 @@ section > .content {
 
 ul > li {
     list-style-type: none;
+}
+
+section {
+    margin-bottom: 10px;
 }
