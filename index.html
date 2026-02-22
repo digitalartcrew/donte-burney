@@ -442,7 +442,7 @@
       /* Hide non-content elements */
       .bg-canvas, .bg-grid, nav, .hero-scroll, .hero-status,
       .hero-ctas, .hero-tags, .contact-btns, footer,
-      .btn-pdf, .rule, .hero-avatar, .book-card { display: none !important; }
+      .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link { display: none !important; }
 
       /* Reset layout */
       main, .container { max-width: 100% !important; padding: 0 !important; }
@@ -604,6 +604,45 @@
       color: var(--text); line-height: 1.2;
     }
     .book-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ── Projects ───────────────────────────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .proj-card { padding: 1.75rem; }
+
+    .proj-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .proj-link {
+      display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      color: var(--muted); text-decoration: none; font-size: 1rem;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .proj-link:hover {
+      background: var(--glass-hover); color: var(--text);
+      border-color: rgba(255,255,255,0.22); transform: translateY(-2px);
+    }
+
+    .proj-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.2rem;
+    }
+
+    .proj-url {
+      font-size: 0.75rem; color: var(--cyan);
+      font-weight: 500; margin-bottom: 0.65rem;
+    }
+
+    .proj-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
   </style>
 </head>
 <body>
@@ -624,6 +663,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -954,6 +994,76 @@
               Also served as a <strong>Combatives Instructor</strong> during deployment — training enlisted soldiers, Rangers, Officers, and Special Forces in close-quarters and hand-to-hand combat, drawing on 15+ years of Greco-Roman wrestling, karate, kickboxing, boxing, and Muay Thai. Camp As Saliyah bench press tournament champion: <strong>385 lbs in the under-160 weight class</strong>.
             </p>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow">Built & Shipped</span>
+        <h2 class="section-title">Featured <span class="grad-text">Projects</span></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="proj-grid">
+
+        <!-- Function Academy -->
+        <div class="card proj-card reveal">
+          <div class="proj-header">
+            <span class="tag tag-g">Education</span>
+            <a href="https://functionacademy.com" target="_blank" rel="noopener" class="proj-link" aria-label="Visit Function Academy">↗</a>
+          </div>
+          <div class="proj-name">Function Academy</div>
+          <div class="proj-url">functionacademy.com</div>
+          <p class="proj-desc">Hawaii's premier coding bootcamp — 19-week Full Stack Web Development program with job placement support and a money-back guarantee. Built to train career-changers for real software engineering roles.</p>
+        </div>
+
+        <!-- Burney's Hot Chicken -->
+        <div class="card proj-card reveal reveal-d1">
+          <div class="proj-header">
+            <span class="tag tag-a">Restaurant</span>
+            <a href="https://burneyshotchicken.com" target="_blank" rel="noopener" class="proj-link" aria-label="Visit Burney's Hot Chicken">↗</a>
+          </div>
+          <div class="proj-name">Burney's Hot Chicken</div>
+          <div class="proj-url">burneyshotchicken.com</div>
+          <p class="proj-desc">Full restaurant website for Honolulu's Nashville-style hot chicken brand — menu showcase, dual-location info, and online ordering integration for pickup and delivery.</p>
+        </div>
+
+        <!-- Chris Aysta -->
+        <div class="card proj-card reveal reveal-d2">
+          <div class="proj-header">
+            <span class="tag tag-c">Creative Portfolio</span>
+            <a href="https://chrisaysta.com" target="_blank" rel="noopener" class="proj-link" aria-label="Visit Chris Aysta">↗</a>
+          </div>
+          <div class="proj-name">Chris Aysta</div>
+          <div class="proj-url">chrisaysta.com</div>
+          <p class="proj-desc">Professional portfolio for LA-based wardrobe stylist Chris Aysta — showcasing work with Apple, Honda, Lucid Motors, and major film and TV productions in a high-impact visual gallery.</p>
+        </div>
+
+        <!-- Preacher Bishop -->
+        <div class="card proj-card reveal reveal-d3">
+          <div class="proj-header">
+            <span class="tag tag-p">Music / Artist</span>
+            <a href="https://digitalartcrew.github.io/preacher-bishop/" target="_blank" rel="noopener" class="proj-link" aria-label="Visit Preacher Bishop">↗</a>
+          </div>
+          <div class="proj-name">Preacher Bishop</div>
+          <div class="proj-url">digitalartcrew.github.io/preacher-bishop</div>
+          <p class="proj-desc">Official artist portfolio for Bronx-based rapper Preacher Bishop — live iTunes API music integration, event listings, gallery, and music video showcase. Dark, high-energy design.</p>
+        </div>
+
+        <!-- GAITTA -->
+        <div class="card proj-card reveal reveal-d3">
+          <div class="proj-header">
+            <span class="tag tag-p">Music / Artist</span>
+            <a href="https://digitalartcrew.github.io/gaitta/" target="_blank" rel="noopener" class="proj-link" aria-label="Visit GAITTA">↗</a>
+          </div>
+          <div class="proj-name">GAITTA</div>
+          <div class="proj-url">digitalartcrew.github.io/gaitta</div>
+          <p class="proj-desc">Artist portfolio and music platform for Oakland rapper GAITTA — full discography, streaming integration, live event listings, and fan newsletter signup.</p>
         </div>
 
       </div>
