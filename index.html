@@ -442,7 +442,7 @@
       /* Hide non-content elements */
       .bg-canvas, .bg-grid, nav, .hero-scroll, .hero-status,
       .hero-ctas, .hero-tags, .contact-btns, footer,
-      .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link { display: none !important; }
+      .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link, .jam-visual { display: none !important; }
 
       /* Reset layout */
       main, .container { max-width: 100% !important; padding: 0 !important; }
@@ -643,6 +643,97 @@
     }
 
     .proj-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+
+    /* ── Jam Clash spotlight ─────────────────────────── */
+    .jam-section { padding: 2rem 0 5rem; }
+
+    .jam-card {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem 2.75rem;
+      border-color: rgba(239,68,68,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+    .jam-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 50%, rgba(239,68,68,0.1), transparent 55%),
+        radial-gradient(ellipse at 15% 60%, rgba(6,182,212,0.06), transparent 55%);
+      pointer-events: none;
+    }
+    .jam-card:hover {
+      border-color: rgba(239,68,68,0.5);
+      box-shadow: 0 28px 72px rgba(239,68,68,0.15);
+    }
+
+    .jam-eyebrow {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .jam-platform {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    .jam-header {
+      display: flex; align-items: center; gap: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .jam-icon {
+      width: 72px; height: 72px; border-radius: 18px;
+      box-shadow: 0 10px 32px rgba(0,0,0,0.55); flex-shrink: 0;
+    }
+    .jam-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem; font-weight: 800; line-height: 1;
+      background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .jam-tagline {
+      font-size: 0.88rem; color: var(--muted); margin-top: 0.35rem;
+      font-style: italic;
+    }
+
+    .jam-desc {
+      font-size: 0.96rem; color: var(--muted); line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .jam-features {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .jam-features span {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.28);
+      border-radius: 50px; padding: 0.28rem 0.85rem;
+      font-size: 0.77rem; color: #fca5a5;
+    }
+
+    .jam-btn {
+      background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+      box-shadow: 0 4px 24px rgba(239,68,68,0.45) !important;
+    }
+    .jam-btn:hover {
+      box-shadow: 0 8px 40px rgba(239,68,68,0.65) !important;
+    }
+
+    .jam-visual { display: flex; justify-content: center; align-items: center; }
+    .jam-splash {
+      width: 100%; max-width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 0 48px rgba(239,68,68,0.2);
+    }
+
+    @media (max-width: 780px) {
+      .jam-card { grid-template-columns: 1fr; padding: 1.75rem; }
+      .jam-visual { order: -1; }
+      .jam-splash { max-width: 200px; }
+    }
   </style>
 </head>
 <body>
@@ -725,6 +816,44 @@
       Scroll
     </div>
   </div>
+
+  <!-- ── JAM CLASH SPOTLIGHT ── -->
+  <section class="jam-section" id="jam-clash">
+    <div class="container">
+      <div class="card jam-card reveal">
+        <div class="jam-content">
+          <div class="jam-eyebrow">
+            <span class="tag tag-p">Featured App</span>
+            <span class="jam-platform">iOS Exclusive &nbsp;·&nbsp; Built by Donte Burney</span>
+          </div>
+          <div class="jam-header">
+            <img src="img/icon.png" class="jam-icon" alt="Jam Clash app icon">
+            <div>
+              <div class="jam-title">Jam Clash</div>
+              <div class="jam-tagline">"Guess Songs. Beat Your Friends. Win the Clash."</div>
+            </div>
+          </div>
+          <p class="jam-desc">
+            A live, competitive music battle game for iPhone — teams race to identify real songs from authentic iTunes previews. Pick your genres, set round limits, and find out who actually knows their music. Free. No sign-up. Pure competition.
+          </p>
+          <div class="jam-features">
+            <span>🎵 Real iTunes previews</span>
+            <span>👥 Live team battles</span>
+            <span>🎛 Genre customization</span>
+            <span>⏱ Adjustable round timing</span>
+            <span>⚡ Free, no sign-up</span>
+          </div>
+          <a href="https://www.jamclash.co" target="_blank" rel="noopener" class="btn jam-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+        </div>
+        <div class="jam-visual">
+          <img src="img/jam-clash.png" class="jam-splash" alt="Jam Clash splash screen">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── ABOUT ── -->
   <section class="section" id="about">
@@ -1010,6 +1139,17 @@
       </div>
 
       <div class="proj-grid">
+
+        <!-- Podle -->
+        <div class="card proj-card reveal">
+          <div class="proj-header">
+            <span class="tag tag-c">Marketplace</span>
+            <a href="https://podle.co" target="_blank" rel="noopener" class="proj-link" aria-label="Visit Podle">↗</a>
+          </div>
+          <div class="proj-name">Podle</div>
+          <div class="proj-url">podle.co</div>
+          <p class="proj-desc">All-in-one platform for the podcast and video services industry — a directory, review site, and marketplace that connects creators with vetted freelance audio and video professionals.</p>
+        </div>
 
         <!-- Function Academy -->
         <div class="card proj-card reveal">
