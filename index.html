@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="img/favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -33,6 +34,14 @@
       color: var(--text);
       overflow-x: hidden;
       line-height: 1.6;
+    }
+
+    /* ── p5 background ──────────────────────────────── */
+    #p5-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
     }
 
     /* ── Background ─────────────────────────────────── */
@@ -440,7 +449,7 @@
       }
 
       /* Hide non-content elements */
-      .bg-canvas, .bg-grid, nav, .hero-scroll, .hero-status,
+      #p5-bg, .bg-canvas, .bg-grid, nav, .hero-scroll, .hero-status,
       .hero-ctas, .hero-tags, .contact-btns, footer,
       .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link, .jam-visual { display: none !important; }
 
@@ -737,6 +746,9 @@
   </style>
 </head>
 <body>
+
+<!-- p5.js background -->
+<div id="p5-bg"></div>
 
 <!-- Background -->
 <div class="bg-canvas">
@@ -1284,6 +1296,116 @@
 <footer>
   <p>© 2026 Donte Burney &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Honolulu, HI</p>
 </footer>
+
+<script>
+// ── p5.js dev background ────────────────────────────
+const PURPLE = [124, 58, 237];
+const CYAN   = [6, 182, 212];
+
+const CODE_TOKENS = [
+  'const', 'async', 'await', '=>', '{ }', '</>',
+  'return', 'null', 'true', 'import', '.map()',
+  'let', '[]', 'class', '&&', 'git push', 'npm i',
+  'fn()', '===', 'type', 'interface', 'export'
+];
+
+let nodes = [], tokens = [];
+const NUM_NODES = 55;
+const LINK_DIST  = 150;
+
+class Node {
+  constructor(init) {
+    this.x  = random(width);
+    this.y  = init ? random(height) : random(height);
+    this.vx = random(-0.28, 0.28);
+    this.vy = random(-0.28, 0.28);
+    this.r  = random(2, 4.5);
+    this.t  = random(1);
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > width)  this.vx *= -1;
+    if (this.y < 0 || this.y > height) this.vy *= -1;
+  }
+  show() {
+    let r = lerp(PURPLE[0], CYAN[0], this.t);
+    let g = lerp(PURPLE[1], CYAN[1], this.t);
+    let b = lerp(PURPLE[2], CYAN[2], this.t);
+    noStroke();
+    fill(r, g, b, 35);
+    ellipse(this.x, this.y, this.r * 5);
+    fill(r, g, b, 190);
+    ellipse(this.x, this.y, this.r);
+  }
+}
+
+class CodeToken {
+  constructor(init) {
+    this.x     = random(width * 0.03, width * 0.97);
+    this.y     = init ? random(height) : height + 20;
+    this.word  = random(CODE_TOKENS);
+    this.sz    = random(10, 15);
+    this.vy    = random(-0.35, -0.12);
+    this.vx    = random(-0.08, 0.08);
+    this.alpha = random(22, 55);
+    this.t     = random(1);
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.y < -30) {
+      this.x    = random(width * 0.03, width * 0.97);
+      this.y    = height + 20;
+      this.word = random(CODE_TOKENS);
+      this.t    = random(1);
+    }
+  }
+  show() {
+    let r = lerp(PURPLE[0], CYAN[0], this.t);
+    let g = lerp(PURPLE[1], CYAN[1], this.t);
+    let b = lerp(PURPLE[2], CYAN[2], this.t);
+    fill(r, g, b, this.alpha);
+    noStroke();
+    textSize(this.sz);
+    textFont('monospace');
+    textAlign(LEFT, CENTER);
+    text(this.word, this.x, this.y);
+  }
+}
+
+function setup() {
+  let cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent('p5-bg');
+  colorMode(RGB, 255, 255, 255, 255);
+  for (let i = 0; i < NUM_NODES; i++) nodes.push(new Node(true));
+  for (let i = 0; i < 28; i++) tokens.push(new CodeToken(true));
+}
+
+function draw() {
+  clear();
+
+  // Connections
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      let d = dist(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+      if (d < LINK_DIST) {
+        let a = map(d, 0, LINK_DIST, 50, 0);
+        let t = (nodes[i].t + nodes[j].t) * 0.5;
+        stroke(lerp(PURPLE[0], CYAN[0], t), lerp(PURPLE[1], CYAN[1], t), lerp(PURPLE[2], CYAN[2], t), a);
+        strokeWeight(0.6);
+        line(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+      }
+    }
+  }
+  noStroke();
+
+  for (let t of tokens) { t.update(); t.show(); }
+  for (let n of nodes)  { n.update(); n.show(); }
+}
+
+function windowResized() { resizeCanvas(windowWidth, windowHeight); }
+</script>
 
 <script>
   // ── Download PDF ───────────────────────────────────
