@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Donte Burney — Full-Stack Software Engineer | React · TypeScript · Node.js</title>
-  <meta name="description" content="Donte Burney is a Full-Stack Software Engineer with 8+ years of experience at LinkedIn and TMZ/Fox Corporation. Expert in React, TypeScript, and Node.js. Based in Honolulu, HI. Open to new roles.">
-  <meta name="keywords" content="Donte Burney, software engineer, full-stack developer, React developer, TypeScript, Node.js, JavaScript, LinkedIn engineer, web developer Honolulu, Hawaii developer, technical educator, Army veteran developer">
+  <title>Donte Burney — Full-Stack Gen AI Engineer | React · TypeScript · LLMs · Node.js</title>
+  <meta name="description" content="Donte Burney is a Full-Stack Gen AI Software Engineer with 8+ years at LinkedIn and TMZ/Fox Corporation. Building AI-powered applications with LLMs, Claude API, and modern full-stack JS/TS. Based in Honolulu, HI.">
+  <meta name="keywords" content="Donte Burney, gen ai engineer, full-stack AI developer, LLM integration, Claude API, prompt engineering, React developer, TypeScript, Node.js, JavaScript, LinkedIn engineer, web developer Honolulu, Hawaii developer, technical educator, Army veteran developer, generative AI">
   <meta name="author" content="Donte Burney">
   <meta name="robots" content="index, follow">
 
@@ -15,15 +15,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://www.donteburney.com/">
-  <meta property="og:title" content="Donte Burney — Full-Stack Software Engineer">
-  <meta property="og:description" content="8+ years building at LinkedIn & TMZ/Fox Corporation. Full-Stack JS/TS specialist, technical educator, and U.S. Army veteran. Based in Honolulu, HI.">
+  <meta property="og:title" content="Donte Burney — Full-Stack Gen AI Engineer">
+  <meta property="og:description" content="8+ years at LinkedIn & TMZ/Fox Corp. Building AI-powered apps with LLMs & full-stack JS/TS. 2 apps in the App Store. Technical educator and U.S. Army veteran. Honolulu, HI.">
   <meta property="og:image" content="https://www.donteburney.com/img/dontesmile.jpeg">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Donte Burney — Full-Stack Software Engineer">
-  <meta name="twitter:description" content="8+ years at LinkedIn & TMZ/Fox Corp. React · TypeScript · Node.js. Honolulu, HI.">
+  <meta name="twitter:title" content="Donte Burney — Full-Stack Gen AI Engineer">
+  <meta name="twitter:description" content="8+ years at LinkedIn & TMZ/Fox Corp. LLMs · React · TypeScript · Node.js. 2 apps shipped. Honolulu, HI.">
   <meta name="twitter:image" content="https://www.donteburney.com/img/dontesmile.jpeg">
 
   <!-- JSON-LD: Person -->
@@ -34,8 +34,8 @@
     "name": "Donte Burney",
     "url": "https://www.donteburney.com/",
     "image": "https://www.donteburney.com/img/dontesmile.jpeg",
-    "jobTitle": "Full-Stack Software Engineer",
-    "description": "Full-Stack Software Engineer with 8+ years of experience at LinkedIn and TMZ/Fox Corporation. Expert in React, TypeScript, and Node.js. Technical educator and U.S. Army veteran based in Honolulu, HI.",
+    "jobTitle": "Full-Stack Gen AI Software Engineer",
+    "description": "Full-Stack Gen AI Software Engineer with 8+ years at LinkedIn and TMZ/Fox Corporation. Building AI-powered apps with LLMs, Claude API, and modern JS/TS. Technical educator, indie iOS developer, and U.S. Army veteran based in Honolulu, HI.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Honolulu",
@@ -49,7 +49,9 @@
     ],
     "knowsAbout": [
       "JavaScript", "TypeScript", "React", "Node.js", "Full-Stack Web Development",
-      "REST APIs", "SQL", "Git", "HTML5", "CSS3", "Technical Education"
+      "Generative AI", "LLM Integration", "Claude API", "Prompt Engineering",
+      "RAG", "Agentic Workflows", "REST APIs", "SQL", "Git", "HTML5", "CSS3", "Technical Education",
+      "iOS App Development"
     ],
     "sameAs": [
       "https://linkedin.com/in/donteburney",
@@ -506,7 +508,8 @@
       /* Hide non-content elements */
       #p5-bg, .bg-canvas, .bg-grid, nav, .hero-scroll, .hero-status,
       .hero-ctas, .hero-tags, .contact-btns, footer,
-      .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link, .jam-visual { display: none !important; }
+      .btn-pdf, .rule, .hero-avatar, .book-card, .proj-link, .jam-visual,
+      .ft-visual, .ft-btn { display: none !important; }
 
       /* Reset layout */
       main, .container { max-width: 100% !important; padding: 0 !important; }
@@ -799,6 +802,121 @@
       .jam-visual { order: -1; }
       .jam-splash { max-width: 200px; }
     }
+
+    /* ── Flow Tight spotlight ────────────────────────── */
+    .ft-section { padding: 0 0 5rem; }
+
+    .ft-card {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem 2.75rem;
+      border-color: rgba(34,197,94,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+    .ft-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 50%, rgba(34,197,94,0.09), transparent 55%),
+        radial-gradient(ellipse at 15% 60%, rgba(6,182,212,0.06), transparent 55%);
+      pointer-events: none;
+    }
+    .ft-card:hover {
+      border-color: rgba(34,197,94,0.5);
+      box-shadow: 0 28px 72px rgba(34,197,94,0.12);
+    }
+
+    .ft-eyebrow {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .ft-platform {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    .ft-header {
+      display: flex; align-items: center; gap: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .ft-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem; font-weight: 800; line-height: 1;
+      background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .ft-tagline {
+      font-size: 0.88rem; color: var(--muted); margin-top: 0.35rem;
+      font-style: italic;
+    }
+
+    .ft-desc {
+      font-size: 0.96rem; color: var(--muted); line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .ft-features {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .ft-features span {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.28);
+      border-radius: 50px; padding: 0.28rem 0.85rem;
+      font-size: 0.77rem; color: #86efac;
+    }
+
+    .ft-btn {
+      background: linear-gradient(135deg, #22c55e, #059669) !important;
+      box-shadow: 0 4px 24px rgba(34,197,94,0.45) !important;
+    }
+    .ft-btn:hover {
+      box-shadow: 0 8px 40px rgba(34,197,94,0.65) !important;
+    }
+
+    .ft-visual {
+      position: relative;
+      width: 300px; height: 220px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .ft-screenshot {
+      position: absolute;
+      border-radius: 16px;
+    }
+    .ft-s1 {
+      width: 120px;
+      left: 12px; top: 18px;
+      transform: rotate(-8deg);
+      z-index: 1;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 20px rgba(34,197,94,0.1);
+    }
+    .ft-s2 {
+      width: 140px;
+      left: 50%; top: 0;
+      transform: translateX(-50%);
+      z-index: 3;
+      box-shadow: 0 20px 52px rgba(0,0,0,0.7), 0 0 32px rgba(34,197,94,0.2);
+    }
+    .ft-s3 {
+      width: 120px;
+      right: 12px; top: 18px;
+      transform: rotate(8deg);
+      z-index: 2;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 20px rgba(34,197,94,0.1);
+    }
+
+    @media (max-width: 780px) {
+      .ft-card { grid-template-columns: 1fr; padding: 1.75rem; }
+      .ft-visual { order: -1; width: 100%; height: 180px; margin-bottom: 0.5rem; }
+      .ft-s1 { width: 100px; left: 15%; }
+      .ft-s2 { width: 120px; }
+      .ft-s3 { width: 100px; right: 15%; }
+    }
   </style>
 </head>
 <body>
@@ -819,6 +937,7 @@
 <nav id="nav">
   <span class="nav-logo">DB</span>
   <ul class="nav-links">
+    <li><a href="#apps">Apps</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -838,7 +957,7 @@
   <div class="hero" id="top" style="position:relative;">
     <div class="hero-status reveal">
       <span class="hero-status-dot"></span>
-      Open to Software Engineering Roles
+      Open to Full-Stack Gen AI Roles
     </div>
 
     <img src="img/dontesmile.jpeg" class="hero-avatar reveal" alt="Donte Burney">
@@ -846,15 +965,17 @@
     <h1 class="reveal reveal-d1">Donte Burney</h1>
 
     <p class="hero-sub reveal reveal-d2">
-      Software Engineer &nbsp;·&nbsp; <span class="accent">Full-Stack JS/TS</span>
+      Full-Stack Engineer &nbsp;·&nbsp; <span class="accent">Gen AI Integration</span> &nbsp;·&nbsp; iOS Developer
     </p>
 
     <div class="hero-tags reveal reveal-d2">
       <span class="hero-tag">React</span>
       <span class="hero-tag">TypeScript</span>
       <span class="hero-tag">Node.js</span>
+      <span class="hero-tag">LLM Integration</span>
       <span class="hero-tag t2">LinkedIn Alumni</span>
       <span class="hero-tag t2">TMZ / Fox Corp</span>
+      <span class="hero-tag t2">2 Apps in App Store</span>
       <span class="hero-tag t3">🎖 U.S. Army Veteran</span>
     </div>
 
@@ -885,13 +1006,24 @@
     </div>
   </div>
 
-  <!-- ── JAM CLASH SPOTLIGHT ── -->
-  <section class="jam-section" id="jam-clash">
+  <!-- ── APP SPOTLIGHTS ── -->
+  <section id="apps" style="padding:2rem 0 0;">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:2rem;">
+        <span class="section-eyebrow">Shipped to the App Store</span>
+        <h2 class="section-title">iOS <span class="grad-text">Apps</span></h2>
+        <div class="rule"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jam Clash -->
+  <section class="jam-section" id="jam-clash" style="padding:0 0 2rem;">
     <div class="container">
       <div class="card jam-card reveal">
         <div class="jam-content">
           <div class="jam-eyebrow">
-            <span class="tag tag-p">Featured App</span>
+            <span class="tag tag-p">App #1</span>
             <span class="jam-platform">iOS Exclusive &nbsp;·&nbsp; Built by Donte Burney</span>
           </div>
           <div class="jam-header">
@@ -923,25 +1055,63 @@
     </div>
   </section>
 
+  <!-- Flow Tight -->
+  <section class="ft-section" id="flow-tight">
+    <div class="container">
+      <div class="card ft-card reveal">
+        <div class="ft-content">
+          <div class="ft-eyebrow">
+            <span class="tag tag-g">App #2</span>
+            <span class="ft-platform">iOS Exclusive &nbsp;·&nbsp; Built by Donte Burney</span>
+          </div>
+          <div class="ft-header">
+            <div>
+              <div class="ft-title">Flow Tight</div>
+              <div class="ft-tagline">"Lock in. Flow. Stay tight."</div>
+            </div>
+          </div>
+          <p class="ft-desc">
+            An iPhone app built for people who take their performance seriously. Flow Tight helps you get locked in, stay consistent, and track what matters — designed for those who move with intention every day.
+          </p>
+          <div class="ft-features">
+            <span>📱 Native iOS</span>
+            <span>🎯 Built for performance</span>
+            <span>⚡ Solo-shipped</span>
+            <span>🔒 No fluff, no clutter</span>
+          </div>
+          <a href="https://apps.apple.com/us/app/flow-tight/id6503659743" target="_blank" rel="noopener" class="btn ft-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+        </div>
+        <div class="ft-visual">
+          <img src="img/flow_tight_1.png" class="ft-screenshot ft-s1" alt="Flow Tight screenshot 1">
+          <img src="img/flow_tight_2.png" class="ft-screenshot ft-s2" alt="Flow Tight screenshot 2">
+          <img src="img/flow_tight_3.png" class="ft-screenshot ft-s3" alt="Flow Tight screenshot 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── ABOUT ── -->
   <section class="section" id="about">
     <div class="container">
       <div class="reveal">
         <span class="section-eyebrow">Who I Am</span>
-        <h2 class="section-title">Engineer · Educator · <span class="grad-text">Veteran</span></h2>
+        <h2 class="section-title">Engineer · Builder · <span class="grad-text">Veteran</span></h2>
         <div class="rule"></div>
       </div>
 
       <div class="about-layout">
         <div class="card about-card reveal">
           <p class="about-text">
-            I'm a <strong>Software Engineer with 8+ years of experience</strong> building high-impact digital products for companies people actually care about — from <strong>LinkedIn</strong> to <strong>TMZ (Fox Corporation)</strong>. My expertise is rooted in JavaScript and TypeScript, with a focus on performant React frontends and scalable Node.js backends.
+            I'm a <strong>Full-Stack Engineer and indie iOS developer with 8+ years of experience</strong> building high-impact digital products for companies people actually care about — from <strong>LinkedIn</strong> to <strong>TMZ (Fox Corporation)</strong>. I've shipped two apps to the App Store, solo, from idea to production.
           </p>
           <p class="about-text">
-            I'm also a <strong>technical educator</strong> who has taught hundreds of engineers at <strong>UCLA, UT Austin, Amazon Apprentices</strong>, and non-profits across the Bay Area — writing curriculum, mentoring career-changers, and expanding access to the industry.
+            My current focus is <strong>Full-Stack Gen AI engineering</strong> — integrating large language models, agentic workflows, and AI-powered APIs into production-grade applications. I bring a deep JS/TS foundation (React, Node.js, TypeScript) and layer AI on top of it to build things that weren't possible two years ago.
           </p>
           <p class="about-text">
-            My background is uniquely multidimensional: I hold a <strong>B.A. in Multimedia Communications & Media Technology</strong> from the Academy of Art University, and my career spans commercial production, video editing, sound engineering, executive producing, and marketing — giving me a rare creative-technical edge most engineers don't have.
+            I'm also a <strong>technical educator</strong> who has taught hundreds of engineers at <strong>UCLA, UT Austin, Amazon Apprentices</strong>, and non-profits across the Bay Area — and my background in commercial production, sound engineering, and executive producing gives me a creative-technical edge that shows up in every product I build.
           </p>
           <div style="margin-top:1.25rem;">
             <span class="vet-pill">🎖 U.S. Army Veteran — 8 Years Served</span>
@@ -956,6 +1126,10 @@
           <div class="card stat-card reveal reveal-d1">
             <div class="stat-num">500+</div>
             <div class="stat-lbl">Students Taught</div>
+          </div>
+          <div class="card stat-card reveal reveal-d2">
+            <div class="stat-num">2</div>
+            <div class="stat-lbl">Apps Shipped to App Store</div>
           </div>
           <!-- <div class="card book-card reveal reveal-d3">
             <img src="img/nothingsoft.jpg" class="book-cover" alt="Nothin Soft book cover">
@@ -1002,7 +1176,6 @@
             <span class="tag tag-c">CLI</span>
             <span class="tag tag-c">SQL</span>
             <span class="tag tag-c">Data Analysis</span>
-            <span class="tag tag-c">Salesforce ADM 201</span>
           </div>
         </div>
 
@@ -1016,6 +1189,19 @@
             <span class="tag tag-a">Executive Producing</span>
             <span class="tag tag-a">Marketing</span>
             <span class="tag tag-a">Acting</span>
+          </div>
+        </div>
+
+        <div class="card skill-card reveal reveal-d2">
+          <div class="skill-cat"><span class="skill-ico">🤖</span> AI &amp; Gen AI</div>
+          <div class="tags">
+            <span class="tag tag-p">LLM Integration</span>
+            <span class="tag tag-p">Claude API</span>
+            <span class="tag tag-p">OpenAI API</span>
+            <span class="tag tag-p">Prompt Engineering</span>
+            <span class="tag tag-p">RAG</span>
+            <span class="tag tag-p">Agentic Workflows</span>
+            <span class="tag tag-p">AI App Development</span>
           </div>
         </div>
 
@@ -1246,12 +1432,6 @@
           <div class="edu-degree">Full Stack Immersive Web Developer Certification</div>
           <div class="edu-sub">Full Stack Web Development</div>
         </div>
-        <div class="card edu-card reveal reveal-d2">
-          <div class="edu-year">2015</div>
-          <div class="edu-school">Salesforce University</div>
-          <div class="edu-degree">ADM 201 Certification</div>
-          <div class="edu-sub">Salesforce Administration</div>
-        </div>
         <!-- <div class="card edu-card reveal reveal-d3" style="grid-column:1/-1; display:flex; gap:1.75rem; align-items:center; flex-wrap:wrap;">
           <div style="flex:1; min-width:220px;">
             <div class="edu-year">1999</div>
@@ -1274,7 +1454,7 @@
       </h2>
       <div class="rule" style="margin: 0.75rem auto 1.5rem;"></div>
       <p class="contact-desc">
-        Open to senior engineering roles, technical leadership opportunities, and advisory positions. I bring a rare blend of product engineering, creative production, and team-building experience.
+        Looking for my next role as a <strong style="color:var(--text);">Full-Stack Gen AI Software Engineer</strong>. I bring 8+ years of production engineering, two shipped iOS apps, and hands-on experience integrating LLMs into real products. If you're building with AI, let's talk.
       </p>
       <div class="contact-btns">
         <button onclick="downloadPDF()" class="btn btn-primary">
@@ -1296,7 +1476,7 @@
 </main>
 
 <footer>
-  <p>© 2026 Donte Burney &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Honolulu, HI</p>
+  <p>© 2026 Donte Burney &nbsp;·&nbsp; Full-Stack Gen AI Engineer &nbsp;·&nbsp; iOS Developer &nbsp;·&nbsp; Honolulu, HI</p>
 </footer>
 
 <script>
@@ -1308,7 +1488,9 @@ const CODE_TOKENS = [
   'const', 'async', 'await', '=>', '{ }', '</>',
   'return', 'null', 'true', 'import', '.map()',
   'let', '[]', 'class', '&&', 'git push', 'npm i',
-  'fn()', '===', 'type', 'interface', 'export'
+  'fn()', '===', 'type', 'interface', 'export',
+  'llm()', 'ai.run()', 'embeddings', 'prompt',
+  '.stream()', 'RAG', 'agent', 'claude()'
 ];
 
 let nodes = [], tokens = [];
@@ -1414,8 +1596,7 @@ function windowResized() { resizeCanvas(windowWidth, windowHeight); }
   function downloadPDF() {
     document.title = 'Donte_Burney_Resume';
     window.print();
-    // Restore title after dialog closes
-    setTimeout(() => { document.title = 'Donte Burney — Software Engineer'; }, 3000);
+    setTimeout(() => { document.title = 'Donte Burney — Full-Stack Gen AI Engineer'; }, 3000);
   }
 
   // ── Scroll reveal ──────────────────────────────────
